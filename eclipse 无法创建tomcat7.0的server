@@ -1,0 +1,20 @@
+eclipse 无法创建tomcat7.0的server
+原创XXGF 最后发布于2016-11-27 11:27:55 阅读数 6311  收藏
+展开
+在配置tomcat server的时候，系统竟然不允许创建tomcat 7.0的 server 。“NEXT”和“FINISH”按钮都是禁用的，我就纳了闷了，为什么其他几个版本的都可以创建，而唯独7.0不让创建呢？
+
+发现了一种可行的解决方案，有可能是eclipse工作空间的缓存配置造成的，引发了无法再次配置7.0 server的问题。
+
+解决思路
+1. 关闭Eclipse；
+
+2. 打开WorkSpace所在的位置：
+
+找到{workspace-directory}/.metadata/.plugins/org.eclipse.core.runtime/.settings 删除以下文件
+
+org.eclipse.wst.server.core.prefs、org.eclipse.jst.server.tomcat.core.pref；
+
+3. 重启 Eclipse，即可解决所有问题。
+————————————————
+版权声明：本文为CSDN博主「XXGF」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_29028175/article/details/53363557
